@@ -1,0 +1,415 @@
+/* Genel Stiller */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-gray: #f5f6fa;
+    --dark-gray: #2d3436;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+}
+
+/* Navbar Stilleri */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: var(--primary-color);
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* Header Bölümü */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    width: 120px;
+    margin-bottom: 2rem;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Ana İçerik */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Bilgi Bölümü */
+.info-section {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-content h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.info-content p {
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.disease-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.disease-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.disease-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.disease-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.disease-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+/* Yükleme Bölümü */
+.upload-section {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.upload-container {
+    text-align: center;
+}
+
+.upload-container h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.upload-container p {
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.upload-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.file-upload-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    background-color: rgba(74, 144, 226, 0.05);
+    transition: var(--transition);
+}
+
+.file-upload-wrapper.highlight {
+    background-color: rgba(74, 144, 226, 0.1);
+    border-color: var(--accent-color);
+}
+
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--secondary-color);
+}
+
+.file-label i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.file-info {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Güvenlik Bildirimi */
+.security-notice {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.notice-content i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.notice-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.notice-content p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    opacity: 1;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .info-section,
+    .upload-section {
+        padding: 2rem;
+    }
+
+    .disease-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .upload-form {
+        width: 100%;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeIn 0.5s ease forwards;
+} 

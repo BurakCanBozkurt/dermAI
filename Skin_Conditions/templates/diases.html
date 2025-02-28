@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermAI | Cilt Hastalıkları</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/diases.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='w-bagr.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="DermAI Logo" class="logo-img">
+                DermAI
+            </a>
+            <div class="navbar-toggle" onclick="toggleNavbar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-links">
+                <a href="/">Ana Sayfa</a>
+                <a href="/diases" class="active">Hastalıklar</a>
+                <a href="/guess">Tahmin</a>
+                <a href="/about">Hakkımızda</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Bölümü -->
+    <header class="page-header">
+        <div class="header-content" data-aos="fade-up">
+            <h1>Cilt Hastalıkları</h1>
+            <p>DermAI'in tanıyabildiği cilt hastalıkları ve özellikleri hakkında bilgi edinin.</p>
+        </div>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main class="diseases-container">
+        <div class="search-section" data-aos="fade-up">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="diseaseSearch" placeholder="Hastalık ara...">
+            </div>
+        </div>
+
+        <section class="diseases-grid">
+            <!-- Hastalık 1 -->
+            <article class="disease-card" data-aos="fade-up">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='images/carcinoma.jpg') }}" alt="Carcinoma">
+                </div>
+                <div class="disease-content">
+                    <h3>Carcinoma</h3>
+                    <p>Carcinoma, cilt veya organlardaki epitel hücrelerinden kaynaklanan bir tür kanserdir. Erken teşhis edilirse tedavi edilebilir.</p>
+                    <div class="disease-info">
+                        <span><i class="fas fa-exclamation-circle"></i> Ciddiyet: Yüksek</span>
+                        <span><i class="fas fa-clock"></i> Erken Teşhis Önemli</span>
+                    </div>
+                    <a href="{{ url_for('disease_detail', disease_name='Carcinoma') }}" class="learn-more">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Hastalık 2 -->
+            <article class="disease-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='images/keratosis.jpg') }}" alt="Keratosis">
+                </div>
+                <div class="disease-content">
+                    <h3>Keratosis</h3>
+                    <p>Keratosis, ciltte kalınlaşma veya sertleşmeye neden olan iyi huylu bir durumdur. Genellikle yaşlanma ile ilişkilidir.</p>
+                    <div class="disease-info">
+                        <span><i class="fas fa-exclamation-circle"></i> Ciddiyet: Orta</span>
+                        <span><i class="fas fa-user"></i> Yaygın Görülme</span>
+                    </div>
+                    <a href="{{ url_for('disease_detail', disease_name='Keratosis') }}" class="learn-more">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Hastalık 3 -->
+            <article class="disease-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='images/milia.jpg') }}" alt="Milia">
+                </div>
+                <div class="disease-content">
+                    <h3>Milia</h3>
+                    <p>Milia, cilt altında küçük beyaz kistler olarak görülen zararsız bir durumdur. Genellikle bebeklerde yaygındır.</p>
+                    <div class="disease-info">
+                        <span><i class="fas fa-exclamation-circle"></i> Ciddiyet: Düşük</span>
+                        <span><i class="fas fa-baby"></i> Bebeklerde Yaygın</span>
+                    </div>
+                    <a href="{{ url_for('disease_detail', disease_name='Milia') }}" class="learn-more">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Hastalık 4 -->
+            <article class="disease-card" data-aos="fade-up">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='images/acne.jpg') }}" alt="Acne">
+                </div>
+                <div class="disease-content">
+                    <h3>Acne</h3>
+                    <p>Acne, cildin yağ bezlerinin tıkanması sonucu ortaya çıkan yaygın bir cilt hastalığıdır. Genellikle ergenlik döneminde görülür.</p>
+                    <div class="disease-info">
+                        <span><i class="fas fa-exclamation-circle"></i> Ciddiyet: Orta</span>
+                        <span><i class="fas fa-child"></i> Gençlerde Yaygın</span>
+                    </div>
+                    <a href="{{ url_for('disease_detail', disease_name='Acne') }}" class="learn-more">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Hastalık 5 -->
+            <article class="disease-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='images/rosacea.jpg') }}" alt="Rosacea">
+                </div>
+                <div class="disease-content">
+                    <h3>Rosacea</h3>
+                    <p>Rosacea, yüz bölgesinde kızarıklık, şişlik ve damar belirginleşmesi ile karakterize kronik bir cilt rahatsızlığıdır.</p>
+                    <div class="disease-info">
+                        <span><i class="fas fa-exclamation-circle"></i> Ciddiyet: Orta</span>
+                        <span><i class="fas fa-sync-alt"></i> Kronik</span>
+                    </div>
+                    <a href="{{ url_for('disease_detail', disease_name='Rosacea') }}" class="learn-more">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Hastalık 6 -->
+            <article class="disease-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='images/eczema.jpg') }}" alt="Eczema">
+                </div>
+                <div class="disease-content">
+                    <h3>Eczema</h3>
+                    <p>Eczema, ciltte kaşıntı, kızarıklık ve iltihaplanmaya neden olan kronik bir cilt hastalığıdır. Genellikle alerjik reaksiyonlarla ilişkilidir.</p>
+                    <div class="disease-info">
+                        <span><i class="fas fa-exclamation-circle"></i> Ciddiyet: Orta</span>
+                        <span><i class="fas fa-allergies"></i> Alerjik</span>
+                    </div>
+                    <a href="{{ url_for('disease_detail', disease_name='Eczema') }}" class="learn-more">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>DermAI</h3>
+                    <p>Cilt sağlığınız için yapay zeka destekli çözümler sunan yenilikçi platformunuz.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="/">Ana Sayfa</a></li>
+                        <li><a href="/diases">Hastalıklar</a></li>
+                        <li><a href="/guess">Tahmin</a></li>
+                        <li><a href="/about">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@dermai.com</li>
+                        <li><i class="fas fa-phone"></i> +90 555 123 4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 DermAI. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Arama fonksiyonu
+        document.getElementById('diseaseSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.disease-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

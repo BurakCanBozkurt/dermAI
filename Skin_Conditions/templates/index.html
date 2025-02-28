@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermAI | Tahmin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='w-bagr.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="DermAI Logo" class="logo-img">
+                DermAI
+            </a>
+            <div class="navbar-toggle" onclick="toggleNavbar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-links">
+                <a href="/">Ana Sayfa</a>
+                <a href="/diases">Hastalıklar</a>
+                <a href="/guess" class="active">Tahmin</a>
+                <a href="/about">Hakkımızda</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Bölümü -->
+    <header class="page-header">
+        <div class="header-content" data-aos="fade-up">
+            <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="DermAI Logo" class="header-logo">
+            <h1>DermAI ile Tanı</h1>
+            <p>Yapay zeka destekli cilt hastalığı tanı sistemimizi kullanarak hızlı ve güvenilir sonuçlar alın.</p>
+        </div>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main class="main-container">
+        <!-- Bilgi Bölümü -->
+        <section class="info-section" data-aos="fade-up">
+            <div class="info-content">
+                <h2>DermAI Nedir?</h2>
+                <p>DermAI, gelişmiş yapay zeka algoritmaları kullanarak cilt hastalıklarını tespit eden yenilikçi bir platformdur. Yüklediğiniz görüntüyü analiz ederek olası cilt hastalıklarını belirler ve size detaylı bilgi sunar.</p>
+                
+                <div class="disease-grid">
+                    <div class="disease-item" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-virus"></i>
+                        <h3>Carcinoma</h3>
+                    </div>
+                    <div class="disease-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-allergies"></i>
+                        <h3>Keratosis</h3>
+                    </div>
+                    <div class="disease-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-dot-circle"></i>
+                        <h3>Milia</h3>
+                    </div>
+                    <div class="disease-item" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-bacteria"></i>
+                        <h3>Acne</h3>
+                    </div>
+                    <div class="disease-item" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fas fa-fire"></i>
+                        <h3>Rosacea</h3>
+                    </div>
+                    <div class="disease-item" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-disease"></i>
+                        <h3>Eczema</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yükleme Bölümü -->
+        <section class="upload-section" data-aos="fade-up">
+            <div class="upload-container">
+                <h2>Görüntü Yükle</h2>
+                <p>Analiz etmek istediğiniz cilt bölgesinin net bir fotoğrafını yükleyin.</p>
+                
+                <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+                    <div class="file-upload-wrapper">
+                        <input type="file" name="file" id="file-input" class="file-input" accept="image/*">
+                        <label for="file-input" class="file-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span class="label-text">Dosya Seçin veya Sürükleyin</span>
+                            <span class="file-info"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-search"></i>
+                        Analiz Et
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Güvenlik Bildirimi -->
+        <section class="security-notice" data-aos="fade-up">
+            <div class="notice-content">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Güvenlik ve Gizlilik</h3>
+                <p>Yüklediğiniz tüm görüntüler güvenli bir şekilde işlenir ve analiz sonrası hemen silinir. Verileriniz asla üçüncü taraflarla paylaşılmaz.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>DermAI</h3>
+                    <p>Cilt sağlığınız için yapay zeka destekli çözümler sunan yenilikçi platformunuz.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="/">Ana Sayfa</a></li>
+                        <li><a href="/diases">Hastalıklar</a></li>
+                        <li><a href="/guess">Tahmin</a></li>
+                        <li><a href="/about">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@dermai.com</li>
+                        <li><i class="fas fa-phone"></i> +90 555 123 4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 DermAI. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Dosya yükleme işlemleri
+        const fileInput = document.getElementById('file-input');
+        const fileLabel = document.querySelector('.label-text');
+        const fileInfo = document.querySelector('.file-info');
+
+        fileInput.addEventListener('change', function(e) {
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+                fileLabel.textContent = 'Seçilen Dosya:';
+                fileInfo.textContent = file.name;
+                
+                // Önizleme gösterimi için buraya kod eklenebilir
+            }
+        });
+
+        // Sürükle-bırak işlemleri
+        const dropZone = document.querySelector('.file-upload-wrapper');
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            dropZone.classList.add('highlight');
+        }
+
+        function unhighlight(e) {
+            dropZone.classList.remove('highlight');
+        }
+
+        dropZone.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+
+            if (files && files[0]) {
+                fileInput.files = files;
+                const file = files[0];
+                fileLabel.textContent = 'Seçilen Dosya:';
+                fileInfo.textContent = file.name;
+            }
+        }
+    </script>
+</body>
+</html>

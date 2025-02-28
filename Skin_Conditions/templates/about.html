@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermAI | Hakkımızda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='w-bagr.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="DermAI Logo" class="logo-img">
+                DermAI
+            </a>
+            <div class="navbar-toggle" onclick="toggleNavbar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-links">
+                <a href="/">Ana Sayfa</a>
+                <a href="/diases">Hastalıklar</a>
+                <a href="/guess">Tahmin</a>
+                <a href="/about" class="active">Hakkımızda</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Bölümü -->
+    <header class="page-header">
+        <div class="header-content" data-aos="fade-up">
+            <h1>Hakkımızda</h1>
+            <p>DermAI'in hikayesi, vizyonu ve misyonu hakkında bilgi edinin.</p>
+        </div>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main class="main-container">
+        <!-- Hikaye Bölümü -->
+        <section class="story-section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>Hikayemiz</h2>
+                <p>DermAI, cilt sağlığı alanında yapay zeka teknolojilerini kullanarak insanların hayatını kolaylaştırmak amacıyla kuruldu. Dermatoloji uzmanları ve yapay zeka geliştiricilerinden oluşan ekibimiz, yıllarca süren araştırma ve geliştirme çalışmaları sonucunda bu platformu oluşturdu.</p>
+            </div>
+        </section>
+
+        <!-- Vizyon ve Misyon -->
+        <section class="vision-mission-section">
+            <div class="vision-mission-grid">
+                <!-- Vizyon -->
+                <div class="vision-card" data-aos="fade-right">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Vizyonumuz</h3>
+                    <p>Cilt sağlığı alanında yapay zeka teknolojilerini kullanarak, herkesin erişebileceği, güvenilir ve yenilikçi çözümler sunmak.</p>
+                </div>
+
+                <!-- Misyon -->
+                <div class="mission-card" data-aos="fade-left">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misyonumuz</h3>
+                    <p>Kullanıcılarımıza en doğru ve hızlı cilt analizi hizmetini sunarak, cilt sağlığı konusunda farkındalık oluşturmak ve erken teşhise katkıda bulunmak.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Değerlerimiz -->
+        <section class="values-section" data-aos="fade-up">
+            <h2>Değerlerimiz</h2>
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Güvenilirlik</h3>
+                    <p>Kullanıcı verilerinin güvenliği ve gizliliği bizim için en önemli önceliktir.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Yenilikçilik</h3>
+                    <p>Sürekli gelişen teknolojileri takip eder ve sistemimizi güncel tutarız.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-heart"></i>
+                    <h3>Kullanıcı Odaklılık</h3>
+                    <p>Kullanıcılarımızın ihtiyaçları ve memnuniyeti her zaman önceliğimizdir.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Şeffaflık</h3>
+                    <p>Tüm süreçlerimizde açık ve şeffaf bir yaklaşım benimseriz.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ekip Bölümü -->
+        <section class="team-section" data-aos="fade-up">
+            <h2>Ekibimiz</h2>
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-image">
+                        <img src="{{ url_for('static', filename='images/a.jpg') }}" alt="Dr. Ahmet Yılmaz">
+                    </div>
+                    <h3>Dr. Ahmet Yılmaz</h3>
+                    <p>Dermatoloji Uzmanı</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-image">
+                        <img src="{{ url_for('static', filename='images/b.jpg') }}" alt="Ayşe Kaya">
+                    </div>
+                    <h3>Ayşe Kaya</h3>
+                    <p>AI Uzmanı</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-image">
+                        <img src="{{ url_for('static', filename='images/c.jpg') }}" alt="Mehmet Demir">
+                    </div>
+                    <h3>Mehmet Demir</h3>
+                    <p>Yazılım Geliştirici</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- İletişim CTA -->
+        <section class="contact-cta" data-aos="fade-up">
+            <div class="cta-content">
+                <h2>Bizimle İletişime Geçin</h2>
+                <p>Sorularınız veya önerileriniz için bize ulaşın.</p>
+                <a href="mailto:info@dermai.com" class="cta-btn">
+                    <i class="fas fa-envelope"></i>
+                    E-posta Gönder
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>DermAI</h3>
+                    <p>Cilt sağlığınız için yapay zeka destekli çözümler sunan yenilikçi platformunuz.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="/">Ana Sayfa</a></li>
+                        <li><a href="/diases">Hastalıklar</a></li>
+                        <li><a href="/guess">Tahmin</a></li>
+                        <li><a href="/about">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@dermai.com</li>
+                        <li><i class="fas fa-phone"></i> +90 555 123 4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 DermAI. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermAI | Analiz Sonucu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='w-bagr.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="DermAI Logo" class="logo-img">
+                DermAI
+            </a>
+            <div class="navbar-toggle" onclick="toggleNavbar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-links">
+                <a href="/">Ana Sayfa</a>
+                <a href="/diases">Hastalıklar</a>
+                <a href="/guess">Tahmin</a>
+                <a href="/about">Hakkımızda</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Bölümü -->
+    <header class="page-header">
+        <div class="header-content" data-aos="fade-up">
+            <h1>Analiz Sonucu</h1>
+            <p>DermAI yapay zeka modelinin analiz sonuçları aşağıda yer almaktadır.</p>
+        </div>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main class="main-container">
+        <!-- Sonuç Kartı -->
+        <section class="result-section" data-aos="fade-up">
+            <div class="result-card">
+                <div class="result-header">
+                    <i class="fas fa-microscope"></i>
+                    <h2>Analiz Detayları</h2>
+                </div>
+
+                <div class="result-content">
+                    <!-- Görsel ve Sonuç Grid -->
+                    <div class="result-grid">
+                        <!-- Yüklenen Görsel -->
+                        <div class="uploaded-image-container" data-aos="fade-right">
+                            <h3>Analiz Edilen Görsel</h3>
+                            <div class="image-wrapper">
+                                <img src="{{ url_for('static', filename=image_filename) }}" alt="Yüklenen Görsel" class="uploaded-image">
+                            </div>
+                        </div>
+
+                        <!-- Sonuç Detayları -->
+                        <div class="result-details" data-aos="fade-left">
+                            <div class="prediction-result">
+                                <h3>Tespit Edilen Hastalık</h3>
+                                <div class="disease-name">
+                                    <i class="fas fa-virus"></i>
+                                    <span>{{ prediction }}</span>
+                                </div>
+                            </div>
+
+                            <div class="disease-description">
+                                <h3>Hastalık Bilgisi</h3>
+                                <p>{{ disease_info }}</p>
+                            </div>
+
+                            <div class="action-buttons">
+                                <a href="{{ url_for('disease_detail', disease_name=prediction) }}" class="info-btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    Detaylı Bilgi
+                                </a>
+                                <a href="/guess" class="new-analysis-btn">
+                                    <i class="fas fa-redo"></i>
+                                    Yeni Analiz
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uyarı Notu -->
+        <section class="notice-section" data-aos="fade-up">
+            <div class="notice-content">
+                <i class="fas fa-exclamation-circle"></i>
+                <h3>Önemli Not</h3>
+                <p>Bu sonuçlar yalnızca bilgilendirme amaçlıdır ve kesin teşhis yerine geçmez. Lütfen detaylı değerlendirme için bir sağlık uzmanına başvurun.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>DermAI</h3>
+                    <p>Cilt sağlığınız için yapay zeka destekli çözümler sunan yenilikçi platformunuz.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="/">Ana Sayfa</a></li>
+                        <li><a href="/diases">Hastalıklar</a></li>
+                        <li><a href="/guess">Tahmin</a></li>
+                        <li><a href="/about">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@dermai.com</li>
+                        <li><i class="fas fa-phone"></i> +90 555 123 4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 DermAI. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermAI | Anasayfa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainpage.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='w-bagr.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="DermAI Logo" class="logo-img">
+                DermAI
+            </a>
+            <div class="navbar-toggle" onclick="toggleNavbar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-links">
+                <a href="/" class="active">Ana Sayfa</a>
+                <a href="/diases">Hastalıklar</a>
+                <a href="/guess">Tahmin</a>
+                <a href="/about">Hakkımızda</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Bölümü -->
+    <header class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Cilt Sağlığınız İçin<br>Yapay Zeka Çözümleri</h1>
+            <p>DermAI ile cilt problemlerinizi erkenden tespit edin, uzman tavsiyeleri alın.</p>
+            <div class="hero-buttons">
+                <a href="/guess" class="cta-btn primary">Hemen Başlayın</a>
+                <a href="#nasil-calisir" class="cta-btn secondary">Nasıl Çalışır?</a>
+            </div>
+        </div>
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-text">Doğruluk Oranı</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-text">Mutlu Kullanıcı</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-text">Destek</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nasıl Çalışır Bölümü -->
+    <section id="nasil-calisir" class="how-it-works">
+        <h2 data-aos="fade-up">Nasıl Çalışır?</h2>
+        <div class="steps-container">
+            <div class="step" data-aos="fade-right">
+                <div class="step-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3>Fotoğraf Yükleyin</h3>
+                <p>Cilt bölgenizin net bir fotoğrafını yükleyin</p>
+            </div>
+            <div class="step" data-aos="fade-up">
+                <div class="step-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Analizi</h3>
+                <p>Yapay zeka modelimiz görüntüyü analiz eder</p>
+            </div>
+            <div class="step" data-aos="fade-left">
+                <div class="step-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Sonuç ve Öneriler</h3>
+                <p>Detaylı rapor ve öneriler alın</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Özellikler Bölümü -->
+    <section class="features">
+        <h2 data-aos="fade-up">Neden DermAI?</h2>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-brain"></i>
+                <h3>Gelişmiş AI Teknolojisi</h3>
+                <p>En son yapay zeka teknolojileri ile yüksek doğruluk oranı</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Güvenli ve Gizli</h3>
+                <p>Verileriniz güvende, gizliliğiniz bizim önceliğimiz</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-clock"></i>
+                <h3>Hızlı Sonuçlar</h3>
+                <p>Saniyeler içinde detaylı analiz ve öneriler</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-user-md"></i>
+                <h3>Uzman Destekli</h3>
+                <p>Dermatoloji uzmanları tarafından doğrulanmış sistem</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kullanıcı Görüşleri -->
+    <section class="testimonials">
+        <h2 data-aos="fade-up">Kullanıcı Deneyimleri</h2>
+        <div class="testimonial-slider" data-aos="fade-up">
+            <div class="testimonial-container">
+                <!-- Testimonial 1 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"DermAI sayesinde cilt rahatsızlığımı erken fark ettim. Çok memnun kaldım!"</p>
+                        <div class="testimonial-author">
+                            <img src="{{ url_for('static', filename='images/avatar1.jpg') }}" alt="Ayşe K." class="author-img">
+                            <div class="author-info">
+                                <h4>Ayşe K.</h4>
+                                <span>İstanbul</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Kullanımı çok kolay ve sonuçlar oldukça doğru. Dermatoloji uzmanımın da onayladığı bir uygulama."</p>
+                        <div class="testimonial-author">
+                            <img src="{{ url_for('static', filename='images/avatar2.jpg') }}" alt="Mehmet Y." class="author-img">
+                            <div class="author-info">
+                                <h4>Mehmet Y.</h4>
+                                <span>Ankara</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Cilt sağlığı konusunda endişelerim vardı. DermAI ile düzenli kontrol yapabiliyorum."</p>
+                        <div class="testimonial-author">
+                            <img src="{{ url_for('static', filename='images/avatar1.jpg') }}" alt="Zeynep A." class="author-img">
+                            <div class="author-info">
+                                <h4>Zeynep A.</h4>
+                                <span>İzmir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Yapay zeka teknolojisinin cilt sağlığında bu kadar etkili kullanılması muhteşem!"</p>
+                        <div class="testimonial-author">
+                            <img src="{{ url_for('static', filename='images/avatar2.jpg') }}" alt="Can B." class="author-img">
+                            <div class="author-info">
+                                <h4>Can B.</h4>
+                                <span>Bursa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Hızlı sonuç alabilmek ve detaylı bilgilere ulaşabilmek çok faydalı. Kesinlikle tavsiye ediyorum."</p>
+                        <div class="testimonial-author">
+                            <img src="{{ url_for('static', filename='images/avatar1.jpg') }}" alt="Elif D." class="author-img">
+                            <div class="author-info">
+                                <h4>Elif D.</h4>
+                                <span>Antalya</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Kontrolleri -->
+            <div class="slider-controls">
+                <button class="prev-btn" onclick="moveSlider(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn" onclick="moveSlider(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Bölümü -->
+    <section class="cta-section" data-aos="fade-up">
+        <div class="cta-content">
+            <h2>Cilt Sağlığınızı Önemseyin</h2>
+            <p>Hemen ücretsiz denemeye başlayın!</p>
+            <a href="/guess" class="cta-btn">Şimdi Deneyin</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>DermAI</h3>
+                    <p>Cilt sağlığınız için yapay zeka destekli çözümler sunan yenilikçi platformunuz.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="/">Ana Sayfa</a></li>
+                        <li><a href="/diases">Hastalıklar</a></li>
+                        <li><a href="/guess">Tahmin</a></li>
+                        <li><a href="/about">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@dermai.com</li>
+                        <li><i class="fas fa-phone"></i> +90 555 123 4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 DermAI. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Testimonial Slider
+        let currentSlide = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const container = document.querySelector('.testimonial-container');
+        let autoSlideInterval;
+
+        function updateSlider() {
+            const slideWidth = testimonials[0].offsetWidth;
+            container.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+
+        function moveSlider(direction) {
+            const maxSlide = testimonials.length - 3; // Yanyana 3 testimonial gösterileceği için
+            currentSlide = (currentSlide + direction + maxSlide + 1) % (maxSlide + 1);
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                moveSlider(1);
+            }, 5000); // Her 5 saniyede bir otomatik kayma
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Sayfa yüklendiğinde slider'ı başlat
+        window.addEventListener('load', () => {
+            updateSlider();
+            startAutoSlide();
+        });
+
+        // Pencere boyutu değiştiğinde slider'ı güncelle
+        window.addEventListener('resize', updateSlider);
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
